@@ -16,6 +16,10 @@ make build-rpi3
 docker run --name hue2mqtt \
 -v hue2mqtt-data:/root/.hue2mqtt \
 -e TZ=America/Toronto \
+-e BRIDGE_IP=192.168.86.131 \
+-e MQTT_PREFIX=hue \
+-e MQTT_URL=mqtt://192.168.86.13 \
+-e POLLING_INTERVAL=1 \
 klutchell/hue2mqtt:rpi3-latest
 ```
 
@@ -23,6 +27,10 @@ klutchell/hue2mqtt:rpi3-latest
 
 * `-v hue2mqtt-data:/root/.hue2mqtt` - persistent data volume
 * `-e TZ=America/Toronto` - local timezone
+* `-e BRIDGE_IP=192.168.86.131` - ip address of local hue bridge
+* `-e MQTT_PREFIX=hue` - mqtt prefix (default is hue)
+* `-e MQTT_URL=mqtt://192.168.86.13` - url of local mqtt server
+* `-e POLLING_INTERVAL=1` - polling interval in seconds
 
 ## Usage
 
