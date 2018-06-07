@@ -11,7 +11,7 @@ RUN git clone --depth 1 https://github.com/klutchell/hue2mqtt.js.git . \
 	&& npm install
 
 # copy src files
-COPY . /usr/src/app/
+COPY start.sh VERSION ./
 
 # run start script on boot
 CMD ["/bin/bash", "start.sh"]
