@@ -5,14 +5,12 @@
 ## Build
 
 ```bash
-# build for rpi3
-make build-rpi3
+make build ARCH=armhf
 ```
 
 ## Deploy
 
 ```bash
-# deploy on rpi3
 docker run --name hue2mqtt \
 -v hue2mqtt-data:/root/.hue2mqtt \
 -e TZ=America/Toronto \
@@ -20,7 +18,7 @@ docker run --name hue2mqtt \
 -e MQTT_PREFIX=hue \
 -e MQTT_URL=mqtt://192.168.86.13 \
 -e POLLING_INTERVAL=1 \
-klutchell/hue2mqtt:rpi3-latest
+klutchell/hue2mqtt:armhf-latest
 ```
 
 ## Parameters
