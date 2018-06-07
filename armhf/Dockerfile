@@ -1,5 +1,10 @@
 FROM resin/raspberrypi3-node:8.11.2
 
+ARG BUILD_DATE
+ARG VERSION=latest
+
+LABEL build_version="${VERSION}"
+LABEL build_date="${BUILD_DATE}"
 LABEL maintainer="kylemharding@gmail.com"
 
 # allow building on x86
